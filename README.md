@@ -1,41 +1,66 @@
-[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/) [![Issues][issues-shield]][issues-url]
 
-<img align="right" alt="logo-compass" height="45" style="border-radius:50px;" src="https://i.ibb.co/88f4VpL/cones.png"> 
+<img align="right" alt="logo-compass" height="100" style="border-radius:50px;" src="https://i.ibb.co/0nq71pK/LOGO-1.png"> 
 
-# Projeto Final - Testando a API ServeRest com Robot 
 
-Projeto de automação de testes da API ServeRest utilizando o Robot Framework, realizado durante as Sprints 5 e 6 do Programa de Bolsas RoboTron da Compass UOL. 
+# Projeto Integrador - DiaZen
+
+Projeto apresentado ao Centro Universitário Senac, como exigência parcial para obtenção de aprovação na disciplina Projeto Integrador IV, do curso de Análise e Desenvolvimento de Sistemas.
+
 
 ## Tópicos
    * [Instalando o projeto](#instalando-o-projeto)
       * [Pré-requisitos](#pré-requisitos)
-      * [Preparando o ambiente e clonando o repositório](#preparando-o-ambiente-e-clonando-o-repositório)
+      * [Preparando o ambiente](#preparando-o-ambiente)
+      * [Passos iniciais após clonar o repositório](#passos-iniciais-após-clonar-o-repositório)
+      * [Criando nova branch para desenvolvimento](#criando-nova-branch-para-desenvolvimento)  
    * [Executando os testes](#executando-os-testes)
       * [Resultados](#resultados)
    * [Sobre o projeto](#sobre-o-projeto)
       * [Diretório](#diretório)
-      * [Mapa mental](#mapa-mental)
-      * [Bugs e sugestões de melhoria](#bugs-e-sugestões-de-melhoria)
-      * [Libraries utilizadas](#libraries-utilizadas)
-      * [Extensões VS Code utilizadas](#extensões-vs-code-utilizadas)
-   * [Referências e agradecimentos](#referências-e-agradecimentos)
-   * [Autora](#autora)
+      * [Frameworks utilizados](#frameworks-utilizados)
+   * [Referências](#referências)
+   * [Autores](#autores)
 
 ## Instalando o projeto 
+
 ### Pré-requisitos 
-- <a href="https://www.python.org/downloads/">Python 3</a>: é a linguagem base do Robot Framework
-- <a href="https://robotframework.org/">Robot Framework</a>: para fazer a automação de testes através das libraries
-- <a href="https://git-scm.com/downloads">Git</a>: para clonar o projeto para a sua máquina
-- <a href="https://nodejs.org/en/">Node.js</a>: para rodar os testes localmente
-- <a href="https://code.visualstudio.com/">Visual Studio Code</a>: para rodar o projeto na sua máquina
 
-### Preparando o ambiente e clonando o repositório
+- <a href='https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.4/xampp-windows-x64-8.2.4-0-VS16-installer.exe'>Xampp</a>: pacote que contém os componentes MySQL e PHP;
+- <a href='https://getcomposer.org/Composer-Setup.exe'>Composer</a>: ferramenta de gerenciamento de dependências em PHP;
+- <a href='https://www.heidisql.com/installers/HeidiSQL_12.5.0.6677_Setup.exe'>HeidiSQL</a>: utilizado para acessar o banco de dados.
 
-1. Instale o Robot Framework via terminal: `pip install robotframework`
-2. Instale a RequestsLibrary: `pip install robotframework-requests`
-3. Instale a Robot Framework Faker: `pip install robotframework-faker`
-4. Clone este repositório no local que você deseja: 
-`git clone https://github.com/manoellasouza/RoboTron_Manoella_Souza_Projeto_Final.git`
+### Preparando o ambiente 
+
+1. Instale o Xampp;
+2. Instale o Composer adicionando o PHP no patch do sistema operacional;
+3. Instale o HeidiSQL;
+> *Atenção*: para executar o Xampp é necessário executá-lo como administrador do sistema;
+
+### Passos iniciais após clonar o repositório
+
+1. Renomeie o arquivo '.env.example' para '.env';
+2. Execute o comando ```composer install```;
+3. Configure os dados do banco de dados dentro de '.env';
+4. Execute o comando ```php artisan key:generate```;
+5. Execute o comando ```php artisan migrate```;
+6. Inicie o projeto através do comando ```php artisan serve```.
+
+
+### Criando nova branch para desenvolvimento
+
+1. Verifique a sua branch atual utilizando o comando ```git branch```;
+2. 
+- Se exiter na branch main, use o comando 'git checkout -b <nome_da_branch/#numero_da_issue_aberta>'. **Exemplo**:
+```
+git checkout -b anotso/#1
+```
+- Caso não esteja na branch main use o comando 'git checkout main';
+- Na branch main execute o 'git pull origin main' **antes de iniciar o desenvolvimento de qualquer nova atividade**;
+- Caso não exista issue aberta no repositório do projeto é só cria-lá. Caso seja destinada para um outro integrante é só informar no grupo e passar a URL para a pessoa.
+
+
+
+
 
 ## Executando os testes
 1. Rode a ServeRest localmente pelo terminal:  ```npx serverest ```
@@ -81,46 +106,24 @@ A automação de testes de uma API é importante para que os testes e as correç
 - :page_with_curl: [funcoes-python-explicadas](funcoes-python-explicadas): Arquivo explicando o código e os objetivos das funções utilizadas na library criada com Python 
 - :page_with_curl: [mapa-mental/](mapa-mental): Arquivo com o mapa mental de todas as rotas da API
 
-### Mapa mental
-Clique <a href="https://github.com/manoellasouza/RoboTron_Manoella_Souza_Projeto_Final/blob/main/mapa-mental-serverest.xmind">AQUI</a> para acessar o arquivo .xmind.
 
-![Mapa Mental - ServeRest](https://user-images.githubusercontent.com/100487940/188462292-8a30d620-85dd-4334-bedc-ef9b0d08a69b.png)
 
-### Bugs e sugestões de melhoria
-  Os bugs da ServeRest são, em sua maioria, documentais. Já as melhorias sugeridas têm como objetivo aperfeiçoar a experiência do usuário e aproximar mais as regras da aplicação a um cenário de venda real. Acesse as <a href="https://github.com/manoellasouza/RoboTron_Manoella_Souza_Projeto_Final/issues">Issues</a> para conferir os bugs e as sugestões de melhorias em detalhes.
-
-### Libraries utilizadas
+### Frameworks utilizados
 - <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#library-documentation-top">BuiltIn</a>: library padrão do Robot que possui as palavras-chave mais utilizadas
 - <a href="https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top">RequestsLibrary</a>: utilizada para fazer as requisições HTTP REST
-- <a href="https://pypi.org/project/robotframework-faker/">Robot Framework Faker</a>: para fazer um fake das massas de dados dentro dos testes
-- <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">Operating System</a>: para ler os arquivos JSON
-- <a href="https://robotframework.org/robotframework/latest/libraries/Collections.html">Collections</a>: para lidar com listas e dicionários do Python
 
-### Extensões VS Code utilizadas
-- <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode">Robot Code</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">Tabnine AI Autocomplete</a>
 
-## Referências e agradecimentos
+
+## Referências
 - <a href="https://serverest.dev/#/">Documentação da API ServeRest</a>
-- <a href="https://robotizandotestes.blogspot.com/2017/09/season-running-ep-01-log-e-report-de.html">Mayara Fernandes - Conteúdo sobre Log e Report de execução</a>
 - <a href="https://github.com/PauloGoncalvesBH/sample-supertest">Repositório Supertest - Inspiração de ReadMe</a>
-- Vídeos da trilha de aprendizado da Compass UOL
-
-Um agradecimento especial aos evangelistas da Compass UOL e aos meus colegas de equipe pelo suporte: <a href="https://github.com/lauraghrk">Laura</a>, <a href="https://github.com/OliveiraMariC">Mari</a>, <a href="https://github.com/phconte">Paulo</a> e <a href="https://github.com/PFrek">Pedro</a> &#129505;
 
 
-## Autora
+
+
+## Autores
 <a href="https://www.linkedin.com/in/manoellasouza/">Manoella Souza</a>
 
-## Bastidores 
-
-<img align="left" alt="cat-pc" height="150" style="border-radius:70px;" src="https://thumbs.gfycat.com/RegularScentedKoala-max-1mb.gif">  
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[issues-shield]: https://img.shields.io/github/issues/manoellasouza/RoboTron_Manoella_Souza_Projeto_Final?style=flat
-[issues-url]: https://github.com/manoellasouza/RoboTron_Manoella_Souza_Projeto_Final/issues
 
 
 
