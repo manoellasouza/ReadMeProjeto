@@ -37,7 +37,7 @@ O DiaZen tem como objetivo auxiliar pessoas com ansiedade e/ou depressão a alca
 
 1. Instale o Xampp;
 2. Instale o Composer adicionando o PHP no patch do sistema operacional;
-3. Instale o HeidiSQL;
+3. Instale o HeidiSQL.
 > *Atenção*: para executar o Xampp é necessário executá-lo como administrador do sistema.
 
 ## Executando o projeto 
